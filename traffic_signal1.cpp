@@ -11,6 +11,7 @@ using namespace std;
 // F bonus points for each car that reaches the destination
 
 int main(){
+	freopen("a.txt","r",stdin);
 	int D,I,S,V,F;
 	cin>>D>>I>>S>>V>>F;
 	
@@ -44,6 +45,27 @@ int main(){
 			path.push_back(str_name);
 		}
 		cars_path.push_back(path);
+	}
+	
+	cout<<"printing streets\n";
+	for(auto x:street_name){
+		cout<<x.first<<" "<<x.second.first<<" "<<x.second.second<<endl;
+	}
+	
+	cout<<"printing paths\n";
+	for(auto x:cars_path){
+		for(auto y:x){
+			cout<<y<<" ";
+		}
+		cout<<endl;
+	}
+	
+	cout<<"printing grid\n";
+	for(int i=0;i<S;i++){
+		for(int j=0;j<S;j++){
+			cout<<G[i][j]<<" ";
+		}
+		cout<<endl;
 	}
 	
 }
